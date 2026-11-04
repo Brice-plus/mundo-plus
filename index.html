@@ -573,7 +573,104 @@ function openModule(id) {
 
     list.appendChild(item);
 
-  });
+  }); 
+if (id === "study") {
+    document.getElementById("eoaChat")?.remove();
+
+    list.insertAdjacentHTML("afterend", `
+        <section id="eoaChat" style="
+            background:#101d38;
+            padding:20px;
+            margin-top:25px;
+            border:1px solid #d9b95b;
+            border-radius:16px;
+            color:white;
+        ">
+            <h2 style="color:#e5c45b;text-align:center;">
+                EOA PLUS+
+            </h2>
+
+            <p style="text-align:center;">
+                Olá! Como posso ajudar hoje?
+            </p>
+
+            <div id="eoaMessages" style="
+                min-height:120px;
+                max-height:300px;
+                overflow-y:auto;
+                padding:12px;
+                background:#172945;
+                border-radius:12px;
+                margin:15px 0;
+            ">
+                <p>EOA PLUS+: Estou pronta para conversar contigo!</p>
+            </div>
+
+            <input id="eoaInput"
+                type="text"
+                placeholder="Escreve a tua pergunta..."
+                style="
+                    width:100%;
+                    box-sizing:border-box;
+                    padding:14px;
+                    border-radius:10px;
+                    border:1px solid #d9b95b;
+                    margin-bottom:10px;
+                ">
+
+            <button id="eoaSend" style="
+                width:100%;
+                padding:14px;
+                background:#d9b95b;
+                color:#101d38;
+                border:0;
+                border-radius:10px;
+                font-weight:bold;
+            ">Enviar mensagem</button>
+
+            <button disabled style="
+                width:100%;
+                padding:12px;
+                margin-top:10px;
+                background:#263b5a;
+                color:white;
+                border:0;
+                border-radius:10px;
+            ">🎤 Microfone — em desenvolvimento</button>
+        </section>
+    `);
+
+    const input = document.getElementById("eoaInput");
+    const messages = document.getElementById("eoaMessages");
+    const send = document.getElementById("eoaSend");
+
+    function sendEOAMessage() {
+        const question = input.value.trim();
+
+        if (!question) return;
+
+        const userMessage = document.createElement("p");
+        userMessage.textContent = "Tu: " + question;
+        messages.appendChild(userMessage);
+
+        const reply = document.createElement("p");
+        reply.textContent =
+            "EOA PLUS+: Recebi a tua pergunta! A minha inteligência artificial ainda está a ser ligada.";
+        messages.appendChild(reply);
+
+        input.value = "";
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    send.addEventListener("click", sendEOAMessage);
+
+    input.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            sendEOAMessage();
+        }
+    });
+}
+
 
   document.getElementById("details").style.display = "block";
 
