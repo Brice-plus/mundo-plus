@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 
 <html lang="pt">
@@ -14,32 +16,564 @@
 
 * {
 
-    margin: 0;
+  box-sizing: border-box;
 
-    padding: 0;
+  margin: 0;
 
-    box-sizing: border-box;
+  padding: 0;
 
 }
 
 body {
 
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 
-    background: #071426;
+  background: #071426;
 
-    color: white;
+  color: white;
 
 }
 
 header {
 
-    padding: 25px 7%;
+  background: #0d203a;
 
-    display: flex;
+  padding: 22px 7%;
 
-    justify-content: space-between;
+  display: flex;
 
-    align-items: center;
+  justify-content: space-between;
 
-    border-bottom: 1px solid #26364c;
+  align-items: center;
+
+  border-bottom: 1px solid #b99a4a;
+
+}
+
+.logo {
+
+  color: #e6c46b;
+
+  font-size: 27px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+}
+
+.logo span {
+
+  color: white;
+
+}
+
+.hero {
+
+  text-align: center;
+
+  padding: 75px 20px 55px;
+
+  background: linear-gradient(145deg, #102c50, #071426);
+
+}
+
+.hero h1 {
+
+  font-size: 42px;
+
+  margin-bottom: 15px;
+
+}
+
+.hero h1 span {
+
+  color: #e6c46b;
+
+}
+
+.hero p {
+
+  color: #c5cedb;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+}
+
+.section-title {
+
+  text-align: center;
+
+  margin: 45px 15px 25px;
+
+}
+
+.section-title h2 {
+
+  color: #e6c46b;
+
+  font-size: 27px;
+
+}
+
+.section-title p {
+
+  color: #b7c2d2;
+
+  margin-top: 9px;
+
+}
+
+.modules {
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 18px;
+
+  padding: 15px 7% 60px;
+
+}
+
+.card {
+
+  background: #10243e;
+
+  border: 1px solid #263d5b;
+
+  border-radius: 13px;
+
+  padding: 25px 20px;
+
+  transition: 0.25s;
+
+}
+
+.card:hover {
+
+  transform: translateY(-5px);
+
+  border-color: #e6c46b;
+
+}
+
+.card .symbol {
+
+  font-size: 30px;
+
+  margin-bottom: 15px;
+
+}
+
+.card h3 {
+
+  color: #e6c46b;
+
+  margin-bottom: 12px;
+
+}
+
+.card p {
+
+  color: #c3ccda;
+
+  line-height: 1.5;
+
+  min-height: 48px;
+
+  margin-bottom: 20px;
+
+}
+
+button {
+
+  background: #d8b65e;
+
+  color: #071426;
+
+  border: none;
+
+  padding: 12px 19px;
+
+  border-radius: 7px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+}
+
+button:hover {
+
+  background: #f0d58d;
+
+}
+
+#details {
+
+  display: none;
+
+  padding: 55px 8%;
+
+  min-height: 350px;
+
+  background: #10243e;
+
+  text-align: center;
+
+}
+
+#details h2 {
+
+  color: #e6c46b;
+
+  font-size: 30px;
+
+  margin-bottom: 18px;
+
+}
+
+#details p {
+
+  color: #d0d8e4;
+
+  line-height: 1.7;
+
+  max-width: 650px;
+
+  margin: 0 auto 20px;
+
+}
+
+#details ul {
+
+  display: inline-block;
+
+  text-align: left;
+
+  color: #d0d8e4;
+
+  line-height: 2;
+
+  margin-bottom: 25px;
+
+}
+
+footer {
+
+  text-align: center;
+
+  padding: 25px;
+
+  color: #aab6c7;
+
+  border-top: 1px solid #263d5b;
+
+  font-size: 13px;
+
+}
+
+@media (max-width: 600px) {
+
+  .hero h1 {
+
+    font-size: 32px;
+
+  }
+
+  header {
+
+    padding: 18px 6%;
+
+  }
+
+  .modules {
+
+    padding-left: 6%;
+
+    padding-right: 6%;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">MUNDO<span>+</span></div>
+
+</header>
+
+<section class="hero">
+
+  <h1>Bem-vindo ao <span>MUNDO+</span></h1>
+
+  <p>Um mundo de possibilidades.<br>
+
+  Uma plataforma, várias experiências, infinitas oportunidades.</p>
+
+</section>
+
+<section class="section-title" id="home">
+
+  <h2>Explora o MUNDO+</h2>
+
+  <p>Escolhe uma das nossas áreas para descobrir mais.</p>
+
+</section>
+
+<main class="modules">
+
+  <div class="card">
+
+    <div class="symbol">📚</div>
+
+    <h3>MUNDO+ STUDY</h3>
+
+    <p>Aprendizagem, educação e ferramentas de estudo.</p>
+
+    <button onclick="openModule('study')">Explorar</button>
+
+  </div>
+
+  <div class="card">
+
+    <div class="symbol">💼</div>
+
+    <h3>MUNDO+ BUSINESS</h3>
+
+    <p>Ferramentas inteligentes para organizar negócios.</p>
+
+    <button onclick="openModule('business')">Explorar</button>
+
+  </div>
+
+  <div class="card">
+
+    <div class="symbol">🎮</div>
+
+    <h3>MUNDO+ GAMES</h3>
+
+    <p>Jogos, desafios e experiências interactivas.</p>
+
+    <button onclick="openModule('games')">Explorar</button>
+
+  </div>
+
+  <div class="card">
+
+    <div class="symbol">⭐</div>
+
+    <h3>MUNDO+ PREMIUM</h3>
+
+    <p>Uma experiência avançada com funcionalidades exclusivas.</p>
+
+    <button onclick="openModule('premium')">Explorar</button>
+
+  </div>
+
+  <div class="card">
+
+    <div class="symbol">🧸</div>
+
+    <h3>MUNDO+ KIDS</h3>
+
+    <p>Um espaço de aprendizagem e diversão para crianças.</p>
+
+    <button onclick="openModule('kids')">Explorar</button>
+
+  </div>
+
+  <div class="card">
+
+    <div class="symbol">🌍</div>
+
+    <h3>MUNDO+ LIFE</h3>
+
+    <p>Organização pessoal, tarefas e produtividade.</p>
+
+    <button onclick="openModule('life')">Explorar</button>
+
+  </div>
+
+  <div class="card">
+
+    <div class="symbol">👨‍👩‍👧‍👦</div>
+
+    <h3>MUNDO+ FAMILY</h3>
+
+    <p>Organização e ferramentas para famílias.</p>
+
+    <button onclick="openModule('family')">Explorar</button>
+
+  </div>
+
+  <div class="card">
+
+    <div class="symbol">🤝</div>
+
+    <h3>MUNDO+ SENIOR</h3>
+
+    <p>Uma experiência digital simples e acessível.</p>
+
+    <button onclick="openModule('senior')">Explorar</button>
+
+  </div>
+
+</main>
+
+<section id="details">
+
+  <h2 id="moduleTitle"></h2>
+
+  <p id="moduleDescription"></p>
+
+  <ul id="moduleFeatures"></ul>
+
+  <br>
+
+  <button onclick="goHome()">Voltar ao MUNDO+</button>
+
+</section>
+
+<footer>
+
+  © 2026 MUNDO+ — Um mundo de possibilidades.
+
+</footer>
+
+<script>
+
+const modules = {
+
+  study: {
+
+    title: "MUNDO+ STUDY",
+
+    description: "Um espaço dedicado à educação e ao desenvolvimento do conhecimento.",
+
+    features: ["Organização de estudos", "Ferramentas educativas", "Calculadoras", "Apoio à aprendizagem"]
+
+  },
+
+  business: {
+
+    title: "MUNDO+ BUSINESS",
+
+    description: "Uma área dedicada a ajudar empresas e pequenos negócios a organizarem as suas actividades.",
+
+    features: ["Gestão de clientes", "Agenda de actividades", "Organização de negócios", "Relatórios"]
+
+  },
+
+  games: {
+
+    title: "MUNDO+ GAMES",
+
+    description: "Um universo de jogos e entretenimento digital.",
+
+    features: ["Jogos originais", "Desafios", "Competições", "MUNDO+ PRO CAREER"]
+
+  },
+
+  premium: {
+
+    title: "MUNDO+ PREMIUM",
+
+    description: "Uma experiência avançada com ferramentas e funcionalidades adicionais.",
+
+    features: ["Funcionalidades exclusivas", "Ferramentas avançadas", "Experiência personalizada", "Serviços premium"]
+
+  },
+
+  kids: {
+
+    title: "MUNDO+ KIDS",
+
+    description: "Um espaço pensado para estimular a criatividade e a aprendizagem das crianças.",
+
+    features: ["Jogos educativos", "Actividades de aprendizagem", "Desafios criativos", "Conteúdo adequado à idade"]
+
+  },
+
+  life: {
+
+    title: "MUNDO+ LIFE",
+
+    description: "Ferramentas para organizar melhor o dia a dia.",
+
+    features: ["Lista de tarefas", "Calendário", "Lembretes", "Organização pessoal"]
+
+  },
+
+  family: {
+
+    title: "MUNDO+ FAMILY",
+
+    description: "Ferramentas para facilitar a organização das famílias.",
+
+    features: ["Calendário familiar", "Actividades", "Organização de tarefas", "Planeamento"]
+
+  },
+
+  senior: {
+
+    title: "MUNDO+ SENIOR",
+
+    description: "Uma experiência digital simples, acessível e fácil de utilizar.",
+
+    features: ["Texto ampliado", "Navegação simples", "Ferramentas úteis", "Interface acessível"]
+
+  }
+
+};
+
+function openModule(id) {
+
+  const module = modules[id];
+
+  document.getElementById("moduleTitle").textContent = module.title;
+
+  document.getElementById("moduleDescription").textContent = module.description;
+
+  const list = document.getElementById("moduleFeatures");
+
+  list.innerHTML = "";
+
+  module.features.forEach(feature => {
+
+    const item = document.createElement("li");
+
+    item.textContent = feature;
+
+    list.appendChild(item);
+
+  });
+
+  document.getElementById("details").style.display = "block";
+
+  document.getElementById("details").scrollIntoView({behavior: "smooth"});
+
+}
+
+function goHome() {
+
+  document.getElementById("details").style.display = "none";
+
+  document.getElementById("home").scrollIntoView({behavior: "smooth"});
+
+}
+
+</script>
+
+</body>
+
+</html>
