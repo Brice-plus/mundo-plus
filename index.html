@@ -562,7 +562,8 @@ function openModule(id) {
   document.getElementById("moduleDescription").textContent = module.description;
 
   const list = document.getElementById("moduleFeatures");
-
+list.style.display = "";
+document.getElementById("moduleDescription").style.display = "";
   list.innerHTML = "";
 
   module.features.forEach(feature => {
