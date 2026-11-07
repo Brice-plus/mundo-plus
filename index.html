@@ -1,680 +1,583 @@
 
-
 <!DOCTYPE html>
-
 <html lang="pt">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>MUNDO+ | Um mundo de possibilidades</title>
+<meta name="theme-color" content="#071426">
+<title>MUNDO PLUS</title>
 
 <style>
+:root {
+  --blue: #071426;
+  --blue2: #0d2038;
+  --gold: #d5ad62;
+  --white: #f5f3ee;
+  --muted: #aeb8c5;
+  --black: #05090f;
+}
 
 * {
-
   box-sizing: border-box;
-
   margin: 0;
-
   padding: 0;
-
 }
 
 body {
-
-  font-family: Arial, sans-serif;
-
-  background: #071426;
-
-  color: white;
-
+  background: var(--blue);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
 }
 
 header {
-
-  background: #0d203a;
-
-  padding: 22px 7%;
-
+  min-height: 76px;
+  padding: 18px 6%;
   display: flex;
-
-  justify-content: space-between;
-
   align-items: center;
-
-  border-bottom: 1px solid #b99a4a;
-
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(213,173,98,.25);
+  background: #050e1b;
 }
 
 .logo {
-
-  color: #e6c46b;
-
-  font-size: 27px;
-
-  font-weight: bold;
-
-  letter-spacing: 2px;
-
+  color: var(--gold);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 3px;
 }
 
-.logo span {
-
-  color: white;
-
-}
-
-.hero {
-
-  text-align: center;
-
-  padding: 75px 20px 55px;
-
-  background: linear-gradient(145deg, #102c50, #071426);
-
-}
-
-.hero h1 {
-
-  font-size: 42px;
-
-  margin-bottom: 15px;
-
-}
-
-.hero h1 span {
-
-  color: #e6c46b;
-
-}
-
-.hero p {
-
-  color: #c5cedb;
-
-  font-size: 17px;
-
-  line-height: 1.6;
-
-}
-
-.section-title {
-
-  text-align: center;
-
-  margin: 45px 15px 25px;
-
-}
-
-.section-title h2 {
-
-  color: #e6c46b;
-
-  font-size: 27px;
-
-}
-
-.section-title p {
-
-  color: #b7c2d2;
-
-  margin-top: 9px;
-
-}
-
-.modules {
-
-  display: grid;
-
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
-  gap: 18px;
-
-  padding: 15px 7% 60px;
-
-}
-
-.card {
-
-  background: #10243e;
-
-  border: 1px solid #263d5b;
-
-  border-radius: 13px;
-
-  padding: 25px 20px;
-
-  transition: 0.25s;
-
-}
-
-.card:hover {
-
-  transform: translateY(-5px);
-
-  border-color: #e6c46b;
-
-}
-
-.card .symbol {
-
-  font-size: 30px;
-
-  margin-bottom: 15px;
-
-}
-
-.card h3 {
-
-  color: #e6c46b;
-
-  margin-bottom: 12px;
-
-}
-
-.card p {
-
-  color: #c3ccda;
-
-  line-height: 1.5;
-
-  min-height: 48px;
-
-  margin-bottom: 20px;
-
-}
-
-button {
-
-  background: #d8b65e;
-
-  color: #071426;
-
-  border: none;
-
-  padding: 12px 19px;
-
-  border-radius: 7px;
-
-  font-weight: bold;
-
+.menu-button {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--gold);
+  padding: 10px 15px;
+  border-radius: 8px;
   cursor: pointer;
-
 }
 
-button:hover {
-
-  background: #f0d58d;
-
+main {
+  width: min(1050px, 90%);
+  margin: auto;
+  padding: 55px 0;
 }
 
-#details {
-
-  display: none;
-
-  padding: 55px 8%;
-
-  min-height: 350px;
-
-  background: #10243e;
-
+.home {
   text-align: center;
-
 }
 
-#details h2 {
-
-  color: #e6c46b;
-
-  font-size: 30px;
-
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
   margin-bottom: 18px;
-
 }
 
-#details p {
+.home h1 {
+  font-size: clamp(34px, 7vw, 58px);
+  letter-spacing: 5px;
+  color: var(--white);
+  margin-bottom: 15px;
+}
 
-  color: #d0d8e4;
+.home h1 span {
+  color: var(--gold);
+}
 
+.intro {
+  color: var(--muted);
   line-height: 1.7;
-
-  max-width: 650px;
-
-  margin: 0 auto 20px;
-
+  max-width: 620px;
+  margin: 0 auto 30px;
 }
 
-#details ul {
+.features {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 28px 0 42px;
+}
 
-  display: inline-block;
+.feature {
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
 
+.section-heading {
+  color: var(--gold);
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+
+.areas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
   text-align: left;
+}
 
-  color: #d0d8e4;
+.area-card {
+  min-height: 115px;
+  padding: 22px;
+  background: linear-gradient(135deg, var(--blue2), #091525);
+  border: 1px solid rgba(213,173,98,.45);
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  cursor: pointer;
+  transition: .2s ease;
+}
 
-  line-height: 2;
+.area-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
 
-  margin-bottom: 25px;
+.number {
+  color: var(--gold);
+  font-size: 27px;
+  font-weight: bold;
+}
 
+.area-name {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.area-description {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.arrow {
+  color: var(--gold);
+  font-size: 23px;
+  margin-left: auto;
 }
 
 footer {
-
   text-align: center;
-
-  padding: 25px;
-
-  color: #aab6c7;
-
-  border-top: 1px solid #263d5b;
-
+  color: var(--muted);
+  padding: 30px 10px;
+  border-top: 1px solid rgba(213,173,98,.2);
   font-size: 13px;
-
+  margin-top: 55px;
 }
 
-@media (max-width: 600px) {
-
-  .hero h1 {
-
-    font-size: 32px;
-
-  }
-
-  header {
-
-    padding: 18px 6%;
-
-  }
-
-  .modules {
-
-    padding-left: 6%;
-
-    padding-right: 6%;
-
-  }
-
+.page {
+  display: none;
 }
 
+.page.active {
+  display: block;
+}
+
+.back {
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  background: transparent;
+  padding: 10px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.page h2 {
+  color: var(--gold);
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.page-intro {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.content-panel {
+  background: var(--blue2);
+  border: 1px solid rgba(213,173,98,.35);
+  padding: 24px;
+  border-radius: 12px;
+  line-height: 1.7;
+}
+
+.content-panel h3 {
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.eoa-panel {
+  margin-top: 24px;
+  border: 1px solid var(--gold);
+  border-radius: 13px;
+  overflow: hidden;
+  background: #050e1b;
+}
+
+.eoa-header {
+  padding: 18px;
+  background: #10233b;
+  border-bottom: 1px solid rgba(213,173,98,.3);
+}
+
+.eoa-header strong {
+  color: var(--gold);
+  font-size: 21px;
+}
+
+.eoa-header p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.chat-messages {
+  min-height: 190px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 18px;
+}
+
+.message {
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  max-width: 90%;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.message.eoa {
+  background: #10233b;
+  border-left: 3px solid var(--gold);
+}
+
+.message.user {
+  background: #26374c;
+  margin-left: auto;
+}
+
+.chat-controls {
+  display: flex;
+  gap: 8px;
+  padding: 14px;
+  border-top: 1px solid rgba(213,173,98,.25);
+}
+
+.chat-controls input {
+  min-width: 0;
+  flex: 1;
+  padding: 13px;
+  border-radius: 8px;
+  border: 1px solid #536174;
+  background: #0b192b;
+  color: white;
+  font-size: 14px;
+}
+
+.chat-controls button {
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.voice-note {
+  color: var(--muted);
+  font-size: 12px;
+  padding: 0 14px 15px;
+}
+
+@media (max-width: 560px) {
+  main {
+    padding-top: 38px;
+  }
+
+  .areas {
+    grid-template-columns: 1fr;
+  }
+
+  .area-card {
+    min-height: 100px;
+  }
+
+  .home h1 {
+    letter-spacing: 3px;
+  }
+}
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-  <div class="logo">MUNDO<span>+</span></div>
-
+  <div class="logo">MUNDO PLUS</div>
+  <button class="menu-button" onclick="goHome()">HOME</button>
 </header>
 
-<section class="hero">
+<main>
 
-  <h1>Bem-vindo ao <span>MUNDO+</span></h1>
+  <!-- HOME CENTRAL -->
+  <section id="home" class="home page active">
+    <div class="eyebrow">Um universo de possibilidades</div>
 
-  <p>Um mundo de possibilidades.<br>
+    <h1>MUNDO <span>PLUS</span></h1>
 
-  Uma plataforma, várias experiências, infinitas oportunidades.</p>
+    <p class="intro">
+      Um mundo digital criado para aproximar pessoas,
+      conhecimento, tecnologia e oportunidades.
+    </p>
 
-</section>
+    <div class="features">
+      <span class="feature">✦ INOVAÇÃO</span>
+      <span class="feature">✦ TECNOLOGIA</span>
+      <span class="feature">✦ CONHECIMENTO</span>
+    </div>
 
-<section class="section-title" id="home">
+    <h3 class="section-heading">EXPLORA O MUNDO PLUS</h3>
 
-  <h2>Explora o MUNDO+</h2>
+    <div class="areas">
 
-  <p>Escolhe uma das nossas áreas para descobrir mais.</p>
+      <button class="area-card" onclick="openArea('study')">
+        <span class="number">01</span>
+        <span>
+          <span class="area-name">MUNDO PLUS STUDY</span>
+          <p class="area-description">Aprendizagem e conhecimento</p>
+        </span>
+        <span class="arrow">→</span>
+      </button>
 
-</section>
+      <button class="area-card" onclick="openArea('business')">
+        <span class="number">02</span>
+        <span>
+          <span class="area-name">MUNDO PLUS BUSINESS</span>
+          <p class="area-description">Negócios e oportunidades</p>
+        </span>
+        <span class="arrow">→</span>
+      </button>
 
-<main class="modules">
+      <button class="area-card" onclick="openArea('kids')">
+        <span class="number">03</span>
+        <span>
+          <span class="area-name">MUNDO PLUS KIDS</span>
+          <p class="area-description">Descoberta e criatividade</p>
+        </span>
+        <span class="arrow">→</span>
+      </button>
 
-  <div class="card">
+      <button class="area-card" onclick="openArea('play')">
+        <span class="number">04</span>
+        <span>
+          <span class="area-name">MUNDO PLUS PLAY</span>
+          <p class="area-description">Entretenimento e diversão</p>
+        </span>
+        <span class="arrow">→</span>
+      </button>
 
-    <div class="symbol">📚</div>
+      <button class="area-card" onclick="openArea('family')">
+        <span class="number">05</span>
+        <span>
+          <span class="area-name">MUNDO PLUS FAMILY</span>
+          <p class="area-description">Família e vida quotidiana</p>
+        </span>
+        <span class="arrow">→</span>
+      </button>
 
-    <h3>MUNDO+ STUDY</h3>
+      <button class="area-card" onclick="openArea('senior')">
+        <span class="number">06</span>
+        <span>
+          <span class="area-name">MUNDO PLUS SENIOR</span>
+          <p class="area-description">Experiência e inclusão digital</p>
+        </span>
+        <span class="arrow">→</span>
+      </button>
 
-    <p>Aprendizagem, educação e ferramentas de estudo.</p>
+    </div>
+  </section>
 
-    <button onclick="openModule('study')">Explorar</button>
+  <!-- STUDY -->
+  <section id="study" class="page">
+    <button class="back" onclick="goHome()">← Voltar ao Home</button>
+    <h2>MUNDO PLUS STUDY</h2>
+    <p class="page-intro">
+      Um espaço dedicado à aprendizagem, ao estudo e à descoberta.
+    </p>
 
-  </div>
+    <div class="content-panel">
+      <h3>Aprende. Descobre. Evolui.</h3>
+      <p>
+        O MUNDO PLUS STUDY foi pensado para apoiar estudantes
+        com explicações, conteúdos educativos e ferramentas
+        de aprendizagem.
+      </p>
+    </div>
 
-  <div class="card">
+    <!-- A EOA APARECE APENAS NO STUDY -->
+    <div class="eoa-panel">
+      <div class="eoa-header">
+        <strong>EOA</strong>
+        <p>Assistente de aprendizagem do MUNDO PLUS STUDY</p>
+      </div>
 
-    <div class="symbol">💼</div>
+      <div id="messages" class="chat-messages">
+        <div class="message eoa">
+          Olá! Sou a EOA. Estou a ser preparada para ajudar
+          nos teus estudos. Em breve poderás conversar comigo.
+        </div>
+      </div>
 
-    <h3>MUNDO+ BUSINESS</h3>
+      <div class="chat-controls">
+        <input id="question" type="text"
+          placeholder="Escreve a tua pergunta..."
+          onkeydown="if(event.key==='Enter') sendMessage()">
+        <button onclick="sendMessage()">Enviar</button>
+      </div>
 
-    <p>Ferramentas inteligentes para organizar negócios.</p>
+      <p class="voice-note">
+        Comunicação por voz: em preparação.
+      </p>
+    </div>
+  </section>
 
-    <button onclick="openModule('business')">Explorar</button>
+  <!-- BUSINESS -->
+  <section id="business" class="page">
+    <button class="back" onclick="goHome()">← Voltar ao Home</button>
+    <h2>MUNDO PLUS BUSINESS</h2>
+    <p class="page-intro">Tecnologia, empreendedorismo e oportunidades.</p>
+    <div class="content-panel">
+      <h3>O mundo dos negócios</h3>
+      <p>
+        Uma área destinada a ferramentas digitais, organização,
+        produtividade e desenvolvimento de projetos.
+      </p>
+    </div>
+  </section>
 
-  </div>
+  <!-- KIDS -->
+  <section id="kids" class="page">
+    <button class="back" onclick="goHome()">← Voltar ao Home</button>
+    <h2>MUNDO PLUS KIDS</h2>
+    <p class="page-intro">Um espaço de descoberta e criatividade para crianças.</p>
+    <div class="content-panel">
+      <h3>Descobrir é aprender</h3>
+      <p>
+        Conteúdos educativos e atividades adequadas à idade,
+        com atenção à segurança e à privacidade das crianças.
+      </p>
+    </div>
+  </section>
 
-  <div class="card">
+  <!-- PLAY -->
+  <section id="play" class="page">
+    <button class="back" onclick="goHome()">← Voltar ao Home</button>
+    <h2>MUNDO PLUS PLAY</h2>
+    <p class="page-intro">Entretenimento, diversão e experiências digitais.</p>
+    <div class="content-panel">
+      <h3>Entra em ação</h3>
+      <p>
+        Uma área preparada para reunir experiências de
+        entretenimento e atividades interativas.
+      </p>
+    </div>
+  </section>
 
-    <div class="symbol">🎮</div>
+  <!-- FAMILY -->
+  <section id="family" class="page">
+    <button class="back" onclick="goHome()">← Voltar ao Home</button>
+    <h2>MUNDO PLUS FAMILY</h2>
+    <p class="page-intro">Ferramentas e conteúdos para o dia a dia da família.</p>
+    <div class="content-panel">
+      <h3>Mais ligação, mais organização</h3>
+      <p>
+        Um espaço pensado para apoiar a organização familiar,
+        a partilha de informação e atividades do quotidiano.
+      </p>
+    </div>
+  </section>
 
-    <h3>MUNDO+ GAMES</h3>
-
-    <p>Jogos, desafios e experiências interactivas.</p>
-
-    <button onclick="openModule('games')">Explorar</button>
-
-  </div>
-
-  <div class="card">
-
-    <div class="symbol">⭐</div>
-
-    <h3>MUNDO+ PREMIUM</h3>
-
-    <p>Uma experiência avançada com funcionalidades exclusivas.</p>
-
-    <button onclick="openModule('premium')">Explorar</button>
-
-  </div>
-
-  <div class="card">
-
-    <div class="symbol">🧸</div>
-
-    <h3>MUNDO+ KIDS</h3>
-
-    <p>Um espaço de aprendizagem e diversão para crianças.</p>
-
-    <button onclick="openModule('kids')">Explorar</button>
-
-  </div>
-
-  <div class="card">
-
-    <div class="symbol">🌍</div>
-
-    <h3>MUNDO+ LIFE</h3>
-
-    <p>Organização pessoal, tarefas e produtividade.</p>
-
-    <button onclick="openModule('life')">Explorar</button>
-
-  </div>
-
-  <div class="card">
-
-    <div class="symbol">👨‍👩‍👧‍👦</div>
-
-    <h3>MUNDO+ FAMILY</h3>
-
-    <p>Organização e ferramentas para famílias.</p>
-
-    <button onclick="openModule('family')">Explorar</button>
-
-  </div>
-
-  <div class="card">
-
-    <div class="symbol">🤝</div>
-
-    <h3>MUNDO+ SENIOR</h3>
-
-    <p>Uma experiência digital simples e acessível.</p>
-
-    <button onclick="openModule('senior')">Explorar</button>
-
-  </div>
+  <!-- SENIOR -->
+  <section id="senior" class="page">
+    <button class="back" onclick="goHome()">← Voltar ao Home</button>
+    <h2>MUNDO PLUS SENIOR</h2>
+    <p class="page-intro">Tecnologia acessível, aprendizagem e inclusão digital.</p>
+    <div class="content-panel">
+      <h3>A tecnologia é para todos</h3>
+      <p>
+        Uma área com conteúdos simples e ferramentas
+        para facilitar a utilização da tecnologia.
+      </p>
+    </div>
+  </section>
 
 </main>
 
-<section id="details">
-
-  <h2 id="moduleTitle"></h2>
-
-  <p id="moduleDescription"></p>
-
-  <ul id="moduleFeatures"></ul>
-
-  <br>
-
-  <button onclick="goHome()">Voltar ao MUNDO+</button>
-
-</section>
-
 <footer>
-
-  © 2026 MUNDO+ — Um mundo de possibilidades.
-
+  Um mundo de oportunidades.
 </footer>
 
 <script>
+/* NAVEGAÇÃO ENTRE AS ÁREAS */
 
-const modules = {
+function openArea(area) {
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
 
-  study: {
+  const selected = document.getElementById(area);
 
-    title: "MUNDO+ STUDY",
-
-    description: "Um espaço dedicado à educação e ao desenvolvimento do conhecimento.",
-
-    features: ["Organização de estudos", "Ferramentas educativas", "Calculadoras", "Apoio à aprendizagem"]
-
-  },
-
-  business: {
-
-    title: "MUNDO+ BUSINESS",
-
-    description: "Uma área dedicada a ajudar empresas e pequenos negócios a organizarem as suas actividades.",
-
-    features: ["Gestão de clientes", "Agenda de actividades", "Organização de negócios", "Relatórios"]
-
-  },
-
-  games: {
-
-    title: "MUNDO+ GAMES",
-
-    description: "Um universo de jogos e entretenimento digital.",
-
-    features: ["Jogos originais", "Desafios", "Competições", "MUNDO+ PRO CAREER"]
-
-  },
-
-  premium: {
-
-    title: "MUNDO+ PREMIUM",
-
-    description: "Uma experiência avançada com ferramentas e funcionalidades adicionais.",
-
-    features: ["Funcionalidades exclusivas", "Ferramentas avançadas", "Experiência personalizada", "Serviços premium"]
-
-  },
-
-  kids: {
-
-    title: "MUNDO+ KIDS",
-
-    description: "Um espaço pensado para estimular a criatividade e a aprendizagem das crianças.",
-
-    features: ["Jogos educativos", "Actividades de aprendizagem", "Desafios criativos", "Conteúdo adequado à idade"]
-
-  },
-
-  life: {
-
-    title: "MUNDO+ LIFE",
-
-    description: "Ferramentas para organizar melhor o dia a dia.",
-
-    features: ["Lista de tarefas", "Calendário", "Lembretes", "Organização pessoal"]
-
-  },
-
-  family: {
-
-    title: "MUNDO+ FAMILY",
-
-    description: "Ferramentas para facilitar a organização das famílias.",
-
-    features: ["Calendário familiar", "Actividades", "Organização de tarefas", "Planeamento"]
-
-  },
-
-  senior: {
-
-    title: "MUNDO+ SENIOR",
-
-    description: "Uma experiência digital simples, acessível e fácil de utilizar.",
-
-    features: ["Texto ampliado", "Navegação simples", "Ferramentas úteis", "Interface acessível"]
-
+  if (selected) {
+    selected.classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
-
-};
-
-function openModule(id) {
-
-  const module = modules[id]; if (id === "study") {
-    module.title = "EOA Plus+";
-    module.description = "Olá! Sou a EOA PLUS+, a tua inteligência artificial. Como posso ajudar. 
-}
-
-  document.getElementById("moduleTitle").textContent = module.title;
-
-  document.getElementById("moduleDescription").textContent = module.description;
-
-  const list = document.getElementById("moduleFeatures");
-list.style.display = "";
-document.getElementById("moduleDescription").style.display = "";
-  list.innerHTML = "";
-
-  module.features.forEach(feature => {
-
-    const item = document.createElement("li");
-
-    item.textContent = feature;
-
-    list.appendChild(item);
-
-  }); 
-if (id === "study") {
-    document.getElementById("eoaChat")?.remove();
-
-    list.insertAdjacentHTML("afterend", `
-        <section id="eoaChat" style="
-            background:#101d38;
-            padding:20px;
-            margin-top:25px;
-            border:1px solid #d9b95b;
-            border-radius:16px;
-            color:white;
-        ">
-            <h2 style="color:#e5c45b;text-align:center;">
-                EOA PLUS+
-            </h2>
-
-            <p style="text-align:center;">
-                Olá! Como posso ajudar hoje?
-            </p>
-
-            <div id="eoaMessages" style="
-                min-height:120px;
-                max-height:300px;
-                overflow-y:auto;
-                padding:12px;
-                background:#172945;
-                border-radius:12px;
-                margin:15px 0;
-            ">
-                <p>EOA PLUS+: Estou pronta para conversar contigo!</p>
-            </div>
-
-            <input id="eoaInput"
-                type="text"
-                placeholder="Escreve a tua pergunta..."
-                style="
-                    width:100%;
-                    box-sizing:border-box;
-                    padding:14px;
-                    border-radius:10px;
-                    border:1px solid #d9b95b;
-                    margin-bottom:10px;
-                ">
-
-            <button id="eoaSend" style="
-                width:100%;
-                padding:14px;
-                background:#d9b95b;
-                color:#101d38;
-                border:0;
-                border-radius:10px;
-                font-weight:bold;
-            ">Enviar mensagem</button>
-
-            <button disabled style="
-                width:100%;
-                padding:12px;
-                margin-top:10px;
-                background:#263b5a;
-                color:white;
-                border:0;
-                border-radius:10px;
-            ">🎤 Microfone — em desenvolvimento</button>
-        </section>
-    `);
-
-    const input = document.getElementById("eoaInput");
-    const messages = document.getElementById("eoaMessages");
-    const send = document.getElementById("eoaSend");
-
-    function sendEOAMessage() {
-        const question = input.value.trim();
-
-        if (!question) return;
-
-        const userMessage = document.createElement("p");
-        userMessage.textContent = "Tu: " + question;
-        messages.appendChild(userMessage);
-
-        const reply = document.createElement("p");
-        reply.textContent =
-            "EOA PLUS+: Recebi a tua pergunta! A minha inteligência artificial ainda está a ser ligada.";
-        messages.appendChild(reply);
-
-        input.value = "";
-        messages.scrollTop = messages.scrollHeight;
-    }
-
-    send.addEventListener("click", sendEOAMessage);
-
-    input.addEventListener("keydown", function(event) {
-        if (event.key === "Enter") {
-            sendEOAMessage();
-        }
-    });
-}
-
-
-  document.getElementById("details").style.display = "block";
-
-  document.getElementById("details").scrollIntoView({behavior: "smooth"});
-
 }
 
 function goHome() {
-
-  document.getElementById("details").style.display = "none";
-
-  document.getElementById("home").scrollIntoView({behavior: "smooth"});
-
+  openArea("home");
 }
 
+/* PREPARAÇÃO DA COMUNICAÇÃO COM A EOA */
+
+const EOA_API = "https://eoa-api.onrender.com";
+
+async function sendMessage() {
+  const input = document.getElementById("question");
+  const messages = document.getElementById("messages");
+  const question = input.value.trim();
+
+  if (!question) return;
+
+  const userMessage = document.createElement("div");
+  userMessage.className = "message user";
+  userMessage.textContent = question;
+  messages.appendChild(userMessage);
+
+  input.value = "";
+
+  const reply = document.createElement("div");
+  reply.className = "message eoa";
+  reply.textContent =
+    "A ligação à inteligência artificial ainda está a ser configurada.";
+  messages.appendChild(reply);
+
+  messages.scrollTop = messages.scrollHeight;
+
+  /*
+    O servidor atual ainda devolve uma resposta de preparação
+    em /chat. Quando a ligação à OpenAI estiver implementada,
+    esta função será atualizada para apresentar as respostas reais.
+  */
+}
 </script>
 
 </body>
-
 </html>
